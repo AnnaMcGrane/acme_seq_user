@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <link rel='stylesheet' href='/vendor/bootstrap/dist/css/bootstrap.css' />
+    </head>
+    <body>
+        <div class="container">
+            <h1 style=color:green>Users</h1>
+                <ul class='nav nav-tabs'>
+                     <li class='nav-item'>
+                        <a href='/' class='nav-link{% if path==='/'%} active{% endif %}'>Home</a>
+                    </li>
+                    <li class='nav-item'>
+                        <a href='/users' class='nav-link{% if path==='/users'%} active{% endif %}'>Users</a>
+                    </li>
+                </ul>
+                <br>
+        </div>
+        <form action = '/users' method ='POST'>
+            <button style='background-color:yellow;'> Create User </button>
+        </form>
+            <ul>
+                {% for user in users %}
+                    <li>
+                     <a>
+                         <h3>{{ user.name }}</h3>
+                     </a>
+                        <form method = 'POST' action='/users/{{user.id}}?_method=DELETE'>
+                            <button style='background-color:powderblue;'> Delete</button>
+                        </form>
+                </li>
+            {% endfor %}
+            </ul>
+    </body>
+</html>
+

@@ -1,0 +1,20 @@
+{
+  "name": "acme_seq_users",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:dev": "DATABASE_URL=postgres://localhost/acme_seq_users nodemon server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.2",
+    "method-override": "^2.3.10",
+    "nunjucks": "^3.0.1",
+    "pg": "^7.4.1",
+    "sequelize": "^4.32.6"
+  }
+}
